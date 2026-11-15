@@ -1,7 +1,7 @@
 # Kith — Personal, Family & Shared Finances
 
 <p align="center">
-  <img src="docs/screenshots/kith_app_icon.png" width="140" height="140" alt="Kith Connected Wealth App Icon" style="border-radius: 28px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35);" />
+  <img src="./docs/screenshots/kith_app_icon.png" width="140" height="140" alt="Kith Connected Wealth App Icon" style="border-radius: 28px; box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35);" />
   <br/>
   <h2 align="center"><b>Kith — Universal Financial Management Platform</b></h2>
   <p align="center">
@@ -55,13 +55,18 @@ Each geometric node represents an essential financial pillar—personal income, 
 * **In-App Purchases as Work In Progress**: Official in-app billing is currently marked as **Work In Progress** and will be powered by Google Play Store Billing upon official release.
 * **Evaluation Conclusion Modal**: After the 5-day evaluation period concludes, a polite pop-up informs the user that the GitHub review period has ended, guiding them to continue with standard Free tier limits, reset the evaluation period in Settings, or contact the creator.
 
-### 4. 100% On-Device Natural Language & Voice Agent
-* Type or speak conversational sentences:
-  * *"Went to a restaurant 65"* ➔ Categorized automatically into **Food & Dining Out** (Expense, \$65.00).
-  * *"Bought tomatoes and vegetables 15"* ➔ Categorized automatically into **Groceries** (Expense, \$15.00).
-  * *"Monthly SIP in Nifty 50 250"* ➔ Categorized into **SIP Mutual Funds** (Savings, \$250.00).
-  * *"HDFC FD deposit 1000"* ➔ Categorized into **Fixed Deposit** (Savings, \$1000.00).
-  * *"October salary credited 5200"* ➔ Categorized into **Salary** (Income, \$5200.00).
+### 4. 100% On-Device Natural Language & Spoken Voice Input
+* **Speak or Type Conversational Sentences**:
+  * Tap the prominent Hero Voice Logger or the microphone button, and speak naturally:
+    * *"Went to a restaurant and spent $1000"* ➔ Captures the entire sentence into the input field, cleanly extracts Title: **"Went to a restaurant"**, Amount: **$1000.00**, Type: **Expense**, and assigns Category: **Food & Dining Out**.
+    * *"Bought tomatoes and vegetables 15"* ➔ Categorized automatically into **Groceries & Supplies** (Expense, \$15.00).
+    * *"Monthly SIP in Nifty 50 250"* ➔ Categorized into **SIP Mutual Funds** (Savings, \$250.00).
+    * *"HDFC FD deposit 1000"* ➔ Categorized into **Fixed Deposit** (Savings, \$1000.00).
+    * *"October salary credited 5200"* ➔ Categorized into **Salary & Earnings** (Income, \$5200.00).
+* **Robust Voice Recognition Engine**:
+  * **Android 11+ & Android 15 Ready**: Declares `<queries>` package visibility for `RecognitionService` and `RECOGNIZE_SPEECH` in `AndroidManifest.xml`.
+  * **Seamless Fallback**: Native `SpeechRecognizer` with dictation mode and instant fallback to Google Voice Input dialog.
+  * **Hero Voice Card**: Displays live listening animations, audio wave indicators, real-time transcription, and auto-populated badges for instant 1-tap ledger recording.
 * **Zero Internet Required**: Powered by `VocabularyService`, written strictly in pure on-device Dart with regex scoring and whole-word boundary matching (`\b`). Zero external cloud LLM dependencies, sub-millisecond response time, and 100% private.
 
 ### 5. Expense Budget Limits (Spent in Red vs. Remaining in Category Color) & Interactive Pie Slabs
@@ -187,22 +192,33 @@ Each geometric node represents an essential financial pillar—personal income, 
 ## 📱 Screenshots Gallery
 
 <p align="center">
-  <img src="docs/screenshots/kith_v93_inr_ledger.png" width="30%" alt="Kith Ledger with INR Currency & Floating Feedback" />
+  <img src="./docs/screenshots/kith_v94_voice_sheet_open.png" width="30%" alt="Hero Voice Logger & Add an Entry Sheet" />
   &nbsp;&nbsp;
-  <img src="docs/screenshots/kith_v93_entry_sheet.png" width="30%" alt="Add an Entry Smart Dynamic Logger" />
+  <img src="./docs/screenshots/kith_v94_phrase_extracted.png" width="30%" alt="Spoken Sentence Auto-Extraction & Parsing" />
   &nbsp;&nbsp;
-  <img src="docs/screenshots/kith_v93_currency_sheet.png" width="30%" alt="World Currencies Directory" />
+  <img src="./docs/screenshots/kith_v94_filtered_spends.png" width="30%" alt="Dynamic Category Filtered Spends List" />
+</p>
+<p align="center">
+  <i>(Left) Prominent Hero Voice Input Banner with live pulsing audio waveform; (Center) "Went to a restaurant and spent $1000" auto-parsed into title, amount, category and expense type; (Right) Category drill-down filtering spends directly in the ledger.</i>
+</p>
+
+<p align="center">
+  <img src="./docs/screenshots/kith_v93_inr_ledger.png" width="30%" alt="Kith Ledger with INR Currency & Floating Feedback" />
+  &nbsp;&nbsp;
+  <img src="./docs/screenshots/kith_v93_entry_sheet.png" width="30%" alt="Add an Entry Smart Dynamic Logger" />
+  &nbsp;&nbsp;
+  <img src="./docs/screenshots/kith_v93_currency_sheet.png" width="30%" alt="World Currencies Directory" />
 </p>
 <p align="center">
   <i>(Left) Main Ledger formatted in Indian Rupee (₹) with Consolidated Dropdown & Floating Feedback; (Center) Smart Voice & NLP "Add an Entry" Dynamic Logger; (Right) Searchable World Currencies Directory (65+ ISO Currencies).</i>
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/kith_v93_summaries.png" width="30%" alt="Summaries Outflow Pie & Top Export Button" />
+  <img src="./docs/screenshots/kith_v93_summaries.png" width="30%" alt="Summaries Outflow Pie & Top Export Button" />
   &nbsp;&nbsp;
-  <img src="docs/screenshots/kith_v93_export_sheet_opened.png" width="30%" alt="Excel Export Configuration Sheet" />
+  <img src="./docs/screenshots/kith_v93_export_sheet_opened.png" width="30%" alt="Excel Export Configuration Sheet" />
   &nbsp;&nbsp;
-  <img src="docs/screenshots/kith_v93_export_success.png" width="30%" alt="Excel Spreadsheet Generated & Saved" />
+  <img src="./docs/screenshots/kith_v93_export_success.png" width="30%" alt="Excel Spreadsheet Generated & Saved" />
 </p>
 <p align="center">
   <i>(Left) Financial Summaries with Outflows Donut Pie & Top Excel Export Action; (Center) Excel Spreadsheet Export Configuration Sheet; (Right) Spreadsheet Generated (.csv) & Saved to Device Flash Storage.</i>
